@@ -1,5 +1,4 @@
 #set :application, "set your application name here"
-default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 set :repository, "git@github.com:railsrumble/rr10-team-174.git"  # Your clone URL
 set :scm, "git"
 set :user, "deploy"  # The server's user for deploys
