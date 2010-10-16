@@ -1,7 +1,7 @@
 module Paperclip
   class << self
     def logger #:nodoc:
-      MongoMapper.logger
+      Rails.logger
     end
   end
 
@@ -33,7 +33,7 @@ module Paperclip
       
       validates_each name, :logic => lambda {|record, attr, value|
         attachment = record.attachment_for(name)
-        attachment.send(:flush_errors) unless attachment.valid?
+        attachment.send(:flush_errors)
       }
     end
   end
@@ -49,3 +49,6 @@ module Paperclip
     end
   end
 end
+MongoMapper::Document.send(:include, Paperclip::Glue)
+File.send(:include, Paperclip::Upfile)
+Paperclip.options[:log] = false
