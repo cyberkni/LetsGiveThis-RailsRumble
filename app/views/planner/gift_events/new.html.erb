@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Gift Event</title>
+  </head>
+  <body id="new.html" onload="">
+    
+    <h1>Create a Gift Event</h1>
+
+    <%= form_for @gift_event, :as => :gift_event, :url => {:action => :create} do |f| %>
+      <p> 
+        <%= f.label :gift_admin_name %>
+        <%= f.text_field :gift_admin_name %>
+      </p>
+      <p> 
+        <%= f.label :gift_admin_email %>
+        <%= f.text_field :gift_admin_email %>
+      </p>
+      <p> 
+        <%= f.label :gift_title %>
+        <%= f.text_field :gift_title %>
+      </p>
+      <p> 
+        <%= f.label :gift_name %>
+        <%= f.text_field :gift_name %>
+      </p>
+      <p> 
+        <%= f.label :gift_price %>
+        <%= f.text_field :gift_price %>
+      </p>
+      <p> 
+        <%= f.label :gift_link %>
+        <%= f.text_field :gift_link %>
+      </p>
+      <p> 
+        <p><%= f.submit "Submit" %></p>
+      </p>
+    <% end %>
+
+    <!--a way to upload the image -->
+  </body>
+</html>
