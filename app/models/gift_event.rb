@@ -15,8 +15,6 @@ class GiftEvent
   before_validation :create_access_tokens
   many :contributions
 
-  
-
   private
   
   def create_access_tokens
