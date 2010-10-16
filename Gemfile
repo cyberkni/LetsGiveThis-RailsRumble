@@ -7,7 +7,6 @@ gem 'bson_ext'
 # To use debugger
 gem 'ruby-debug'
 gem 'jquery-rails'
-gem 'carrierwave'
 
 # Bundle the extra gems:
 # gem 'bj'
