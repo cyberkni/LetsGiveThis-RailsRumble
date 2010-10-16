@@ -4,5 +4,21 @@
 <%= link_to event_url(@gift_event.access_token), event_url(@gift_event.access_token) %>
 <p>Your admin link is:</p>
 <%= link_to planner_event_url(@gift_event.gift_admin_token), planner_event_url(@gift_event.gift_admin_token) %>
-
-<%= link_to "Edit", edit_planner_event_url(@gift_event.gift_admin_token), :remote => true %>
+<p>
+  <%= link_to "Edit", edit_planner_event_url(@gift_event.gift_admin_token), :remote => true %>
+</p>
+<h2>Giving List</h2>
+<table>
+  <thead>
+    <th>Who</th>
+    <th>Email</th>
+    <th>Amount</th>
+  </thead>
+<% @gift_event.contributions.each do |gift| %>
+  <tr>
+    <td><%= gift.name %></td>
+    <td><%= mail_to(gift.email) %></td>
+    <td><%= gift.amount %></td>
+  </tr>
+<% end %>
+</table>

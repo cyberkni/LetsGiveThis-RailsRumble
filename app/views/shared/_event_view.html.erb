@@ -2,6 +2,4 @@
 <p>Planned by <%= @gift_event.gift_admin_name %></p>
 <%=raw generate_gift_title(@gift_event) %>
 <h2>$<%= @gift_event.gift_price %></h2>
-
-<h2>Give here:</h2>
-<p>something</p>
+<p><%= number_to_currency(@gift_event.contribution_total) %> raised! We are <%= number_to_percentage(@gift_event.percent_done, :precision => 2) %> to our goal</p>

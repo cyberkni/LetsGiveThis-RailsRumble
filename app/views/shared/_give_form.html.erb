@@ -1,0 +1,20 @@
+<div id='giving'>
+<h2>Give here:</h2>
+<%= form_for Contribution.new, :url => event_give_index_url(@gift_event.access_token), :remote => true do |f| %>
+  <p> 
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p> 
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p> 
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.submit "Give" %>
+  </p>
+<% end %>
+</div>
