@@ -22,6 +22,8 @@ class GiftEvent
   before_validation :create_access_tokens
   many :contributions
 
+  validates_format_of :gift_link, :with => URI::regexp(%w(http https))
+
   # broken
   # has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
   
