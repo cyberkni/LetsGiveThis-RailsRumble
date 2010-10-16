@@ -10,7 +10,8 @@ class Planner::GiftEventsController < ActionController::Base
     @gift_event = GiftEvent.new(params[:gift_event])
     respond_to do |format|
       if @gift_event.save
-        format.html { redirect_to(@gift_event) }
+        @gift_event.reload
+        format.html { redirect_to event_url(@gift_event.access_token) }
       else
         format.html { render :action => 'new' }
       end
