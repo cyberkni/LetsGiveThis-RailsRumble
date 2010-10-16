@@ -1,4 +1,9 @@
 Letsgivethis::Application.routes.draw do
+  namespace :planner do
+    resources :event, :controller => :gift_events
+  end
+  resources :event, :controller => :gift_events
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +53,7 @@ Letsgivethis::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "gift_events#index"
 
   # See how all your routes lay out with "rake routes"
 
