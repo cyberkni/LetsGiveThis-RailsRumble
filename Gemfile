@@ -8,6 +8,7 @@ gem 'bson_ext'
 gem 'ruby-debug'
 gem 'jquery-rails'
 gem 'paperclip'
+gem 'mush'
 
 # Bundle the extra gems:
 # gem 'bj'

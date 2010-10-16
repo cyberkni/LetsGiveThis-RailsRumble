@@ -1,4 +1,5 @@
 require 'paperclip'
+require 'mush'
 
 class GiftEvent
   include MongoMapper::Document
@@ -18,9 +19,10 @@ class GiftEvent
   key :image_content_type, String
   key :image_file_size, Integer
   key :image_updated_at, DateTime
+  key :gift_short_link, String
   timestamps!
   
-  before_validation :create_access_tokens
+  before_validation :create_access_tokens, :generate_short_link
   many :contributions
 
   PORT = /(([:]\d+)?)/
@@ -49,6 +51,17 @@ class GiftEvent
     end
     if self.access_token.blank?
       self.access_token = ActiveSupport::SecureRandom.hex(16)
+    end
+  end
+  
+  def generate_short_link
+    bitly = Mush::Services::Bitly.new
+    bitly.login = "letsgivethis"
+    bitly.apikey = "R_11d45c6bcc9f53f7ab38ace79fd6bc1e"
+    
+    if self.gift_short_link.blank?
+      # I know there must be a better way than this...
+      self.gift_short_link = bitly.shorten "http://letsgivethis.com/event/#{self.access_token}"
     end
   end
 end
