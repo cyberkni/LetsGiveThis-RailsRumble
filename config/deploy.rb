@@ -6,6 +6,7 @@ set :user, "deploy"  # The server's user for deploys
 set :deploy_to, "/var/app/letsgivethis.com"
 set :branch, "master"
 set :deploy_via, :remote_cache
+ssh_options[:forward_agent] = true
 
 role :web, "letsgivethis.com"                          # Your HTTP server, Apache/etc
 role :app, "letsgivethis.com"                          # This may be the same as your `Web` server
