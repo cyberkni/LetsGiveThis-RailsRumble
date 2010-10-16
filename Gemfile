@@ -7,6 +7,7 @@ gem 'bson_ext'
 # To use debugger
 gem 'ruby-debug'
 gem 'jquery-rails'
+gem 'paperclip'
 
 # Bundle the extra gems:
 # gem 'bj'

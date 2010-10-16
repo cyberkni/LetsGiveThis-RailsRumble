@@ -1,3 +1,5 @@
+require 'paperclip'
+
 class GiftEvent
   include MongoMapper::Document
 
@@ -10,10 +12,17 @@ class GiftEvent
   key :gift_price, Float, :required => true
   key :gift_link, String
   key :gift_file_path, String
+  # image crap
+  key :image_file_name, String
+  key :image_content_type, String
+  key :image_file_size, Integer
+  key :image_updated_at, DateTime
   timestamps!
   
   before_validation :create_access_tokens
   many :contributions
+
+  has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
 
   private
   
