@@ -9,6 +9,7 @@ gem 'ruby-debug'
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'mush'
+gem 'remotipart'
 
 # Bundle the extra gems:
 # gem 'bj'

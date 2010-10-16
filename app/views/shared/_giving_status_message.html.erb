@@ -1,0 +1,7 @@
+<p id='givingprogress'>
+  <%= number_to_currency(@gift_event.contribution_total) %> raised!
+<% unless @gift_event.amount_remaining <= 0 %>
+  We are <%= number_to_percentage(@gift_event.percent_done, :precision => 2) %> to our goal. 
+  Only <%= number_to_currency(@gift_event.amount_remaining) %> to go!
+<% end %>
+</p>
