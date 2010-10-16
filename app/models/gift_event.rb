@@ -2,6 +2,7 @@ require 'paperclip'
 
 class GiftEvent
   include MongoMapper::Document
+  include Paperclip::Glue
 
   key :gift_admin_email, String, :required => true, :format => RFC822::EmailAddress
   key :gift_admin_token, String, :required => true, :unique => true
@@ -28,9 +29,8 @@ class GiftEvent
 
   validates_format_of :gift_link, :with => /^((localhost)|#{DOMAIN}|#{NUMERIC_IP})#{PORT}$/
 
-  # broken
-  # has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
-  
+  has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
+
   def contribution_total
     contributions.inject(0) do |sum, c|
       sum += c.amount
