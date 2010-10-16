@@ -1,4 +1,5 @@
 class GiftEvent
+  require 'carrierwave/orm/mongomapper'
   include MongoMapper::Document
 
   key :gift_admin_email, String, :required => true, :format => RFC822::EmailAddress

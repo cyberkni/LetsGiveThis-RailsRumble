@@ -23,6 +23,13 @@
   <%= f.label :gift_link %>
   <%= f.text_field :gift_link %>
 </p>
+<p>
+<!-- <label>My Avatar</label> -->
+  <%= f.label :gift_image%>
+  <%= image_tag(@gift_event.gift_event_image_url) if @gift_event.gift_event_image? %>
+  <%= f.file_field :gift_event_image %>
+  <%= f.hidden_field :gift_event_image_cache %>
+</p>
 <p> 
   <p><%= f.submit "Submit" %></p>
 </p>
