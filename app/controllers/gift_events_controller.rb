@@ -1,6 +1,6 @@
 class GiftEventsController < ActionController::Base
-  respond_to :html
-  
+  respond_to :html, :js
+  layout 'application'
   def index
     render :action => 'index'
   end
