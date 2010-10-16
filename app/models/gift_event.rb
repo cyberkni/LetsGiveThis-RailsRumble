@@ -24,7 +24,9 @@ class GiftEvent
   many :contributions
 
   has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
-  
+
+  validates_format_of :gift_link, :with => URI::regexp(%w(http https))
+
   def contribution_total
     contributions.inject(0) do |sum, c|
       sum += c.amount
