@@ -1,0 +1,4 @@
+<h1>Update a Gift Event</h1>
+<%= form_for [:planner, @gift_event], :as => :gift_event, :url => {:action => :update}, :remote => true do |f| %>
+  <%= render 'gift_event_form', :f => f %>
+<% end %>

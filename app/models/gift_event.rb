@@ -23,7 +23,11 @@ class GiftEvent
   private
   
   def create_access_tokens
-    self.gift_admin_token = ActiveSupport::SecureRandom.hex(16)
-    self.access_token = ActiveSupport::SecureRandom.hex(16)
+    if self.gift_admin_token.blank?
+      self.gift_admin_token = ActiveSupport::SecureRandom.hex(16)
+    end
+    if self.access_token.blank?
+      self.access_token = ActiveSupport::SecureRandom.hex(16)
+    end
   end
 end

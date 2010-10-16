@@ -1,1 +1,1 @@
-$("div#main").html("<%= escape_javascript(render(:template => 'planner/gift_events/show.html.erb'))%>"); 
+document.location = "<%=planner_event_url(@gift_event.gift_admin_token) %>";

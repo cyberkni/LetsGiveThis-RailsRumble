@@ -4,3 +4,5 @@
 <%= link_to event_url(@gift_event.access_token), event_url(@gift_event.access_token) %>
 <p>Your admin link is:</p>
 <%= link_to planner_event_url(@gift_event.gift_admin_token), planner_event_url(@gift_event.gift_admin_token) %>
+
+<%= link_to "Edit", edit_planner_event_url(@gift_event.gift_admin_token), :remote => true %>
