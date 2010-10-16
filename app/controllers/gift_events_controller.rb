@@ -1,4 +1,4 @@
-class GiftEventController < ActionController::Base
+class GiftEventsController < ActionController::Base
   respond_to :html
   
   def index

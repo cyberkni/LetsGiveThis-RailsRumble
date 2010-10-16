@@ -1,4 +1,4 @@
-classs Planner::GiftEventController < ActionController::Base
+class Planner::GiftEventsController < ActionController::Base
   respond_to :html
   
   def new
