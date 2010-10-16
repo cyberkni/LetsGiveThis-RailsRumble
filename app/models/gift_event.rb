@@ -22,7 +22,8 @@ class GiftEvent
   before_validation :create_access_tokens
   many :contributions
 
-  has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
+  # broken
+  # has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
 
   private
   

@@ -22,5 +22,11 @@ Letsgivethis::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  # config.after_initialize do
+  #   require 'paperclip'
+  #   Paperclip.options[:command_path] = '/opt/local/bin'
+  # end
+  
 end
 
