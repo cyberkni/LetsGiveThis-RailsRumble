@@ -22,7 +22,11 @@ class GiftEvent
   before_validation :create_access_tokens
   many :contributions
 
-  validates_format_of :gift_link, :with => URI::regexp(%w(http https))
+  PORT = /(([:]\d+)?)/
+  DOMAIN = /([a-z0-9\-]+\.?)*([a-z0-9]{2,})\.[a-z]{2,}/
+  NUMERIC_IP = /(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5])(?:\/(?:[12]?\d|3[012])|-(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5]))?/
+
+  validates_format_of :gift_link, :with => /^((localhost)|#{DOMAIN}|#{NUMERIC_IP})#{PORT}$/
 
   # broken
   # has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
