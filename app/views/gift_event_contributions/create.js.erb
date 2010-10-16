@@ -1,1 +1,2 @@
 $("div#giving").html("<%= escape_javascript(render(:partial => 'thank_you'))%>"); 
+$('p#givingprogress').html("<%= escape_javascript(render(:partial => 'shared/giving_status_message'))%>");

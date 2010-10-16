@@ -41,6 +41,10 @@ class GiftEvent
     (contribution_total / gift_price) * 100
   end
 
+  def amount_remaining
+    gift_price - contribution_total
+  end
+
   private
 
   def create_access_tokens

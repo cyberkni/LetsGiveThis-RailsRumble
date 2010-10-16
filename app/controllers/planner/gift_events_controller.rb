@@ -12,7 +12,6 @@ class Planner::GiftEventsController < ActionController::Base
   end
 
   def create
-    debugger
     @gift_event = GiftEvent.new(params[:gift_event])
     respond_to do |format|
       if @gift_event.save

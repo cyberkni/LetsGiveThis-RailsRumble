@@ -1,0 +1,8 @@
+<h2>Recent Gift Amounts</h2>
+<% if @gift_event.contributions.blank? %>
+  <p>No one has given yet</p>
+<% else %>
+  <% @gift_event.contributions.each do |contribution| %>
+    <p><%= number_to_currency(contribution.amount) %></p>
+  <% end %>
+<% end %>
