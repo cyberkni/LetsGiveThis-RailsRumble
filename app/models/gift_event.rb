@@ -24,9 +24,19 @@ class GiftEvent
 
   # broken
   # has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
+  
+  def contribution_total
+    contributions.inject(0) do |sum, c|
+      sum += c.amount
+    end
+  end
+
+  def percent_done
+    (contribution_total / gift_price) * 100
+  end
 
   private
-  
+
   def create_access_tokens
     if self.gift_admin_token.blank?
       self.gift_admin_token = ActiveSupport::SecureRandom.hex(16)

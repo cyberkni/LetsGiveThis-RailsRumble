@@ -7,4 +7,4 @@
 <p>something</p>
 <p>
   <%= image_tag @gift_event.image.url(:medium) %>
-</p>
+<p><%= number_to_currency(@gift_event.contribution_total) %> raised! We are <%= number_to_percentage(@gift_event.percent_done, :precision => 2) %> to our goal</p>

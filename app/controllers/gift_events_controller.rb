@@ -7,7 +7,8 @@ class GiftEventsController < ActionController::Base
   
   def show
     @gift_event = GiftEvent.find_by_access_token(params[:id])
-    respond_with(@gift_event)
+    @contribition = Contribution.new
+    render
   end
   
 end
