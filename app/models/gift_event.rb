@@ -10,7 +10,8 @@ class GiftEvent
   key :gift_price, Float, :required => true
   key :gift_link, String
   key :gift_file_path, String
-
+  timestamps!
+  
   before_validation :create_access_tokens
   many :contributions
 
