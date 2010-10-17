@@ -7,8 +7,8 @@
 			<dt class="simple" title="Simple"><span>Simple</span></dt>
 			<dd>No accounts, no signups, no fees.  Just a <strong>better way</strong> to plan your gift.</dd>
 
-			<dt class="fast" title="Fast"><span>Fasy</span></dt>
-			<dd>Starting tracking your gift contributions <strong>quickly</strong>&hellip; in fewer than two minutes!</dd>
+			<dt class="fast" title="Fast"><span>Fast</span></dt>
+			<dd>Starting tracking your gift contributions <strong>quickly</strong>&hellip;<br />in under two minutes!</dd>
 
 			<dt class="easy" title="Easy"><span>Easy</span></dt>
 			<dd>No complex forms to navigate.<br />Just the bare <strong>essentials</strong> to start planning.</dd>
@@ -21,55 +21,44 @@
 
 	<h2>Start Here</h2>
 
+	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
+		<p>
+			<%= f.label :gift_title, 'What is your group gift?' %>
+			<%= f.text_field :gift_title %>
+		</p>
+<!--
+		<p>
+			<%= f.label :gift_name, 'What is the gift?' %> 
+			<%= f.text_field :gift_name %>
+		</p>
+-->
+		<p>
+			<%= f.label :gift_price, 'How much?' %>
+			<%= f.text_field :gift_price %>
+		</p>
+		<p>
+			<%= f.submit 'Continue' %>
+		</p>
+		<div class="more">
+			<p>
+				<%= f.label :gift_admin_name, 'Your name?' %>
+				<%= f.text_field :gift_admin_name %>
+			</p>
+			<p>
+				<%= f.label :gift_admin_email, 'Your email?' %>
+				<%= f.text_field :gift_admin_email %>
+			</p>
+			<p>
+				<%= f.label :gift_link, 'Do you have a link with more details?' %>
+				<%= f.text_field :gift_link %>
+			</p>
+			<p>
+				<%= f.label :image, 'Do you have a photo?' %>
+				<%= f.file_field :image %>
+			</p>
+		</div>
+	<% end %>
 
-
-
-
-<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
-  <div id='signup_phase1'>
-    <p> 
-      <%= f.label :gift_title, "What is the event that this gift is for?" %>
-      <%= f.text_field :gift_title %>
-    </p>
-    <p> 
-      <%= f.label :gift_name, "What is the gift?" %> 
-      <%= f.text_field :gift_name %>
-    </p>
-    <p> 
-      <%= f.label :gift_price, "How much is it?" %>
-      <%= f.text_field :gift_price %>
-    </p>
-    <p>
-      <%= f.submit "Submit" %>
-    </p>
-  </div>
-  <div id='signup_phase2'>
-    <p> 
-      <%= f.label :gift_admin_name, "What is your name?" %>
-      <%= f.text_field :gift_admin_name %>
-    </p>
-    <p> 
-      <%= f.label :gift_admin_email, "What is your email address?" %>
-      <%= f.text_field :gift_admin_email %>
-    </p>
-  </div>
-  <div id='signup_phase3'>
-    <p> 
-      <%= f.label :gift_link, "Is there a link to the gift that people can look at?" %>
-      <%= f.text_field :gift_link %>
-    </p>
-    <p>
-      <%= f.label :image, "Do you have a photo or image of the gift?" %>
-      <%= f.file_field :image %>
-    </p>
-  </div>
-<% end %>
-
-<%= render :partial => 'shared/admin_link_recovery' %>
-
-
-
-
-
+	<%= render :partial => 'shared/admin_link_recovery' %>
 
 </div>

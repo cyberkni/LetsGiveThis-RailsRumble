@@ -15,7 +15,7 @@ html, body {
 }
 
 	html {
-		overflow-y: scroll;								/* always show vertical scrollbar */
+		overflow-y: scroll;								// always show vertical scrollbar
 		border-top: 20px solid #2e2b2b;
 	}
 
@@ -85,22 +85,77 @@ em, strong {
 		font-weight: bold;
 	}
 
+@mixin formelement {
+	width: 300px;
+	padding: 6px 7px;
+	border: 3px solid #c3c3c3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+@mixin formbutton {
+	width: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+@mixin formbuttonhover {
+}
+
+form {
+
+	margin-bottom: 20px;
+
+	& >h2 {
+		margin-top: 100px;
+	}
+
+	fieldset {}
+
+	label {}
+
+	button,
+	input,
+	select,
+	textarea {
+		@include formelement;
+	}
+
+		input:focus, input.focus,
+		select:focus, select.focus,
+		textarea:focus, textarea.focus {
+		}
+
+		textarea {
+		}
+
+		input[type='checkbox'] {
+			width: auto;
+			float: left;
+		}
+
+		select {}
+
+		button,
+		input[type='submit'],
+		input[type='reset'] {
+
+			@include formbutton;
+			&:hover {
+				@include formbuttonhover;
+			}
+
+		}
+}
+
 @mixin selection {
 	background: #fff666;
 }
 
-	/* redundancy: FF bug prevents selector combination */
+	// redundancy: FF bug prevents selector combination
 	::selection { @include selection; }
 	::-moz-selection { @include selection; }
-
-/*
- * Common mixins
- */
-
-@mixin clear {
-	display: block;
-	clear: both;
-}
 
 /*
  * Framework
@@ -201,7 +256,7 @@ em, strong {
 		left: 417px;
 		width: 377px;
 		height: 56px;
-		background: url(/theme/head-h2-home.png) no-repeat 0 0;
+		background: url(/theme/head-h2.png) no-repeat 0 0;
 	}
 
 	p {
@@ -210,7 +265,7 @@ em, strong {
 		left: 419px;
 		width: 435px;
 		height: 82px;
-		background: url(/theme/head-p-home.png) no-repeat 0 0;
+		background: url(/theme/head-p.png) no-repeat 0 0;
 	}
 
 	h1 span,

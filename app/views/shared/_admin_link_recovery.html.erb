@@ -1,8 +1,7 @@
-<div id='forgot_urls'>
-<h3>Lost your admin link?</h3>
-<p>Tell us your email and we'll email you the links.</p>
+<h2>Already planned a gift?</h2>
+<p>Enter your email address and we will resend the link to manage your gift.</p>
+
 <%= form_tag '/admin_recovery', :remote => true do %>
-  <%= text_field_tag 'admin_email' %>
-  <%= submit_tag "Submit" %>
+	<%= text_field_tag 'admin_email' %>
+	<%= submit_tag 'Continue' %>
 <% end %>
-</div>
