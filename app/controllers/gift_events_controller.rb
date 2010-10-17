@@ -11,4 +11,12 @@ class GiftEventsController < ActionController::Base
     render
   end
   
+  def admin_recovery
+    @gift_events = GiftEvent.find_all_by_gift_admin_email(params[:admin_email])
+    @gift_events.each do |gift_event|
+      # inject mailer bits
+      logger.info "mailed to #{gift_event.gift_admin_email}"
+    end
+    render
+  end
 end

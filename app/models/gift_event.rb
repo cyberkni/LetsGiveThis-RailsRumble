@@ -30,6 +30,7 @@ class GiftEvent
   NUMERIC_IP = /(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5])(?:\/(?:[12]?\d|3[012])|-(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5]))?/
 
   validates_format_of :gift_link, :with => /^(http:\/\/|https:\/\/)*((localhost)|#{DOMAIN}|#{NUMERIC_IP})/
+#  validates_format_of :gift_link, :with => /^(((localhost)|#{DOMAIN}|#{NUMERIC_IP})#{PORT})|$/
 
   has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
 
