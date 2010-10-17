@@ -105,10 +105,16 @@ em, strong {
 	}
 
 hr {
+
 	clear: both;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border: 2px dashed #dbdbdb;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
 }
 
 @mixin formelement {
@@ -166,7 +172,7 @@ form {
 			clear: none;
 			margin-left: 15px;
 			margin-bottom: 0;
-			color: #9e9d9d;
+			color: #8a8a8a;
 			line-height: 28px;
 			font-size: 12px;
 		}
@@ -256,6 +262,20 @@ table.grid {
 
 	td {
 		height: 30px;
+	}
+
+}
+
+div.photo {
+
+	float: right;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+
+	img {
+		width: 100px;
+		height: 100px;
 	}
 
 }

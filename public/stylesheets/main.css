@@ -68,6 +68,8 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   border: 2px dashed #dbdbdb; }
+  hr:first-child {
+    margin-top: 0; }
 
 form {
   display: block;
@@ -90,7 +92,7 @@ form {
       clear: none;
       margin-left: 15px;
       margin-bottom: 0;
-      color: #9e9d9d;
+      color: #8a8a8a;
       line-height: 28px;
       font-size: 12px; }
   form input,
@@ -166,6 +168,15 @@ table.grid {
     text-transform: uppercase; }
   table.grid td {
     height: 30px; }
+
+div.photo {
+  float: right;
+  overflow: hidden;
+  width: 100px;
+  height: 100px; }
+  div.photo img {
+    width: 100px;
+    height: 100px; }
 
 ::selection {
   background: #fff666; }

@@ -24,7 +24,7 @@
 	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true }, :remote => true do |f| %>
 		<p>
 			<%= f.label :gift_name, 'What is the gift?' %> 
-			<%= f.label :gift_name, 'Example: Dave\'s Skydiving Trip' %> 
+			<%= f.label :gift_name, '(Example: Dave\'s Skydiving Trip)' %> 
 			<%= f.text_field :gift_name %>
 		</p>
 		<p>

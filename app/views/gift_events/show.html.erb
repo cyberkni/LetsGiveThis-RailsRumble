@@ -2,8 +2,41 @@
 
 <div class="bind">
 
-	<%= render :partial => 'shared/give_form' %>
-	<hr />
-	<%= render :partial => 'recent_gifts_tracker' %>
+	<h2>Your Contribution</h2>
+
+	<% if @gift_event.contributions.blank? %>
+		<p>
+			You're about to make the first contribution!<br />
+			Set the bar impossibly high&hellip;
+		</p>
+	<% else %>
+		<p>
+			The last few contributions made were for
+			<% first = true %>
+			<% @gift_event.contributions.map(&:amount).each do |contribution| %><%= first ? '': ',' %><% first = false %> <strong>$<%= number_with_precision(contribution, :precision => 2)%></strong><% end %>.<br />
+			Can you do better&hellip;?
+		</p>
+	<% end %>
+
+	<%= form_for Contribution.new, :url => event_give_index_url(@gift_event.access_token), :remote => true do |f| %>
+		<p> 
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</p>
+		<p> 
+			<%= f.label :amount %>
+			<span id="contribution_amount_icon" title="$"></span>
+			<%= f.text_field :amount %>
+		</p>
+		<p> 
+			<%= f.label :email %>
+			<%= f.label :email, "(Your email will only be shared with #{@gift_event.gift_admin_name})" %>
+			<%= f.text_field :email %>
+		</p>
+		<p>
+			<%= f.submit 'Give', :class => 'inline' %>
+		</p>
+	<% end %>
+	<div class="clear"></div>
 
 </div>

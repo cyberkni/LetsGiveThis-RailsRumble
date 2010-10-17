@@ -1,7 +1,6 @@
-h2 span {
+#shoulder h2 span {
   font-size: 18px; }
-
-#price {
+#shoulder #price {
   display: inline-block;
   float: right;
   height: 31px;
@@ -12,27 +11,26 @@ h2 span {
   font-size: 28px;
   font-weight: bold; }
 
-#progressbar {
+#body #progressbar {
   float: left;
   width: 150px;
   height: 40px;
   margin: 4px 20px 0 25px; }
-
-table th.amount {
+#body table th.amount {
   width: 60px; }
-
-#gift_event_gift_name {
+#body #new_contribution {
+  margin-top: 20px; }
+#body #gift_event_gift_name {
   width: 400px; }
-
-label[for="gift_event_gift_price"],
-label[htmlFor="gift_event_gift_price"] {
+#body label[for="gift_event_gift_price"],
+#body label[htmlFor="gift_event_gift_price"] {
   margin-left: 30px; }
-
-#gift_event_gift_price {
+#body #gift_event_gift_price,
+#body #contribution_amount {
   clear: none;
   width: 140px; }
-
-#gift_event_gift_price_icon {
+#body #gift_event_gift_price_icon,
+#body #contribution_amount_icon {
   display: block;
   clear: both;
   float: left;
@@ -43,15 +41,17 @@ label[htmlFor="gift_event_gift_price"] {
   background-image: url(/theme/icon-dollar.png);
   background-repeat: no-repeat;
   background-position: 0 0; }
-
-#gift_event_continue {
+#body #gift_event_continue {
   width: 126px;
   background-image: url(/theme/button-continue.png); }
-
-#gift_event_submit {
+#body #gift_event_submit {
   width: 107px;
   background-image: url(/theme/button-update.png); }
-
-#gift_event_gift_admin_email,
-#gift_event_gift_link {
+#body #gift_event_gift_admin_email,
+#body #gift_event_gift_link,
+#body #contribution_name,
+#body #contribution_email {
   width: 450px; }
+#body #contribution_submit {
+  width: 90px;
+  background-image: url(/theme/button-give.png); }

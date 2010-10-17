@@ -13,9 +13,8 @@ function handler() {
 	// init form
 	//
 
+	// validation
 	$('#gift_event_edit')
-
-		// validation
 		.validate({
 			rules: {
 				'gift_event[gift_title]': 'required',
@@ -26,6 +25,19 @@ function handler() {
 					minlength: 2
 				},
 				'gift_event[gift_admin_email]': {
+					required: true,
+					email: true
+				}
+			}
+		});
+
+	// validation
+	$('#new_contribution')
+		.validate({
+			rules: {
+				'contribution[name]': 'required',
+				'contribution[amount]': 'required',
+				'contribution[email]': {
 					required: true,
 					email: true
 				}

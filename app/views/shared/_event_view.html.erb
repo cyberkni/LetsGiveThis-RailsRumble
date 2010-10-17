@@ -10,13 +10,11 @@
 
 <div class="bind">
 
-	<% unless @gift_event.image_file_name.blank? %>
 		<% if @gift_event.gift_link.blank? %>
-			<div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
+			<div class="photo"><%= image_tag @gift_event.image.url(:thumb, false) %></div>
 		<% else %>
-			<div><%= link_to(image_tag(@gift_event.image.url(:thumb, false)), @gift_event.gift_link) %></div>
+			<div class="photo"><%= link_to(image_tag(@gift_event.image.url(:thumb, false)), @gift_event.gift_link) %></div>
 		<% end %>
-	<% end %>
 
 	<%= render :partial => 'shared/giving_status_message' %>
 
