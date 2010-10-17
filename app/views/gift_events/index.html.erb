@@ -19,13 +19,11 @@
 
 <div class="bind">
 
+	<h2>Start Here</h2>
 
 
-<h1>Welcome to Let's Give This</h1>
-<p>We are the place to go when you are organizing a group gift for someone. Just
-  setup a Gift here and send a link to your friends. No Login required ever.</p>
 
-<h2>Let's Get Started</h2>
+
 
 <%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
   <div id='signup_phase1'>
@@ -74,4 +72,4 @@
 
 
 
-		</div>
+</div>
