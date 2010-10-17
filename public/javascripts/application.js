@@ -98,6 +98,8 @@ $(document).ready(function() {
 
 //Index javascript validators
 $().ready(function() {
+  $('p.makeitgo').show()
+  $('div.more').hide();
 	$("#gift_event_new").validate({
 		rules: {
 			'gift_event[gift_title]': "required",

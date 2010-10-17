@@ -21,7 +21,7 @@
 
 	<h2>Start Here</h2>
 
-	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
+	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true }, :remote => true do |f| %>
 		<p>
 			<%= f.label :gift_title, 'Who or what is the gift for?' %>
 			<%= f.text_field :gift_title %>
