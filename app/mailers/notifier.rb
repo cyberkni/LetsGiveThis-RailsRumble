@@ -20,4 +20,11 @@ class Notifier < ActionMailer::Base
     end
   end
   
+  def send_gift_event_admin_info(gift_event)
+    @gift_event = gift_event
+    mail(:to => @gift_event.gift_admin_email, :subject => "Your Gift Event info!") do |format|
+      format.text { render "send_gift_event_admin_info" }
+    end
+  end
+  
 end
