@@ -1,13 +1,23 @@
-<h1><%= @gift_event.gift_title %></h1>
-<p>Planned by <%= @gift_event.gift_admin_name %></p>
-<%=raw generate_gift_title(@gift_event) %>
-<h2><%= number_to_currency(@gift_event.gift_price) %></h2>
-<% unless @gift_event.image_file_name.blank? %>
-  <% if @gift_event.gift_link.blank? %>
-    <div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
-  <% else %>
-    <div><%= link_to(image_tag(@gift_event.image.url(:thumb, false)), @gift_event.gift_link) %></div>
-  <% end %>
-<% end %>
-<%= render :partial => 'shared/giving_status_message' %>
+<div id="shoulder">
+	<div class="bind">
 
+		<div id="price" class="box"><%= number_to_currency(@gift_event.gift_price, :unit => '') %></div>
+		<h2><%= @gift_event.gift_name %> <span>for</span> <%= @gift_event.gift_title %></h2>
+		<h2 class="subtitle">Planned by <%= @gift_event.gift_admin_name %></h2>
+
+	</div>
+</div>
+
+<div class="bind">
+
+	<% unless @gift_event.image_file_name.blank? %>
+		<% if @gift_event.gift_link.blank? %>
+			<div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
+		<% else %>
+			<div><%= link_to(image_tag(@gift_event.image.url(:thumb, false)), @gift_event.gift_link) %></div>
+		<% end %>
+	<% end %>
+
+	<%= render :partial => 'shared/giving_status_message' %>
+
+</div>

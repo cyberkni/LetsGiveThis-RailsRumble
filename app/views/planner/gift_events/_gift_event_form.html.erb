@@ -1,40 +1,35 @@
-<div id="gift_event_error_box">
-  <%= render "shared/error_messages", :target => @gift_event %>
-</div>
-<div id="signup_phase1">
-  <p> 
-    <%= f.label :gift_title %>
-    <%= f.text_field :gift_title %>
-  </p>
-  <p>
-    <%= f.label :gift_name %>
-    <%= f.text_field :gift_name %>
-  </p>
-  <p>
-    <%= f.label :gift_price %>
-    <%= f.text_field :gift_price %>
-  </p>
-</div>
-<div id="signup_phase2">
-  <p> 
-    <%= f.label :gift_admin_name %>
-    <%= f.text_field :gift_admin_name %>
-  </p>
-  <p> 
-    <%= f.label :gift_admin_email %>
-    <%= f.text_field :gift_admin_email %>
-  </p>
-</div>
-<div id="signup_phase3">
-<p> 
-  <%= f.label :gift_link %>
-  <%= f.text_field :gift_link %>
+<p>
+	<%= f.label :gift_name, 'What is the gift?' %> 
+	<%= f.label :gift_name, 'Example: Dave\'s Skydiving Trip' %> 
+	<%= f.text_field :gift_name %>
 </p>
 <p>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+	<%= f.label :gift_price, 'How much?' %>
+	<span id="gift_event_gift_price_icon" title="$"></span>
+	<%= f.text_field :gift_price, :value => number_with_precision(f.object.gift_price, :precision => 2) %>
 </p>
 <p>
-  <%= f.submit "Submit" %>
+	<%= f.label :gift_title, 'Whom is the gift for?' %>
+	<%= f.text_field :gift_title %>
 </p>
-</div>
+<p>
+	<%= f.label :gift_link, 'Do you have a link with more details?' %>
+	<%= f.label :gift_link, '(optional)' %>
+	<%= f.text_field :gift_link %>
+</p>
+<p>
+	<%= f.label :gift_admin_name, 'Your name?' %>
+	<%= f.text_field :gift_admin_name %>
+</p>
+<p>
+	<%= f.label :gift_admin_email, 'Your email?' %>
+	<%= f.text_field :gift_admin_email %>
+</p>
+<p>
+	<%= f.label :image, 'Do you have a photo?' %>
+	<%= f.label :image, '(optional)' %>
+	<%= f.file_field :image %>
+</p>
+<p>
+	<%= f.submit 'Update', :class => 'inline' %>
+</p>

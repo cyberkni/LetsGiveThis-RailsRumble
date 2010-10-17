@@ -18,6 +18,11 @@ function handler() {
 					});
 			})
 		.end()
+		.find('#gift_event_gift_price')
+			.blur(function() {
+				$('#gift_event_continue').click();
+			})
+		.end()
 		.find('div.more').hide().end()
 
 		// validation

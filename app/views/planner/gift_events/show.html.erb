@@ -1,30 +1,51 @@
 <%= render :partial => 'shared/event_view' %>
 
-<p>Your links to share with others is:</p>
-<%= link_to event_url(@gift_event.access_token), event_url(@gift_event.access_token) %>
-<p>We've shortened it for you:</p>
-<%= link_to @gift_event.gift_short_link, @gift_event.gift_short_link %>
-<p>Your admin link is:</p>
-<%= link_to planner_event_url(@gift_event.gift_admin_token), planner_event_url(@gift_event.gift_admin_token) %>
-<p>
-  <%= link_to "Edit", edit_planner_event_url(@gift_event.gift_admin_token), :remote => true %>
-</p>
-<h2>Giving List</h2>
-<% if @gift_event.contributions.empty? %>
-  No one has given yet.
-<% else %>
-<table>
-  <tr>
-    <th>Who</th>
-    <th>Email</th>
-    <th>Amount</th>
-  </tr>
-<% @gift_event.contributions.each do |gift| %>
-  <tr>
-    <td><%= gift.name %></td>
-    <td><%= mail_to(gift.email) %></td>
-    <td><%= gift.amount %></td>
-  </tr>
-<% end %>
-</table>
-<% end %>
+<div class="bind">
+
+	<h2>Spread the Word</h2>
+	<p>
+		The link to share with others is:<br />
+		<%= link_to event_url(@gift_event.access_token), event_url(@gift_event.access_token) %>
+	</p>
+	<p>
+		We've shortened it for you:<br />
+		<%= link_to @gift_event.gift_short_link, @gift_event.gift_short_link %>
+	</p>
+
+	<hr />
+
+	<h2>Contributors</h2>
+	<% if @gift_event.contributions.empty? %>
+		<p>
+			No one has given anything yet.<br />
+			Spread the word using one of the links above&hellip;
+		</p>
+	<% else %>
+		<table class="grid">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th class="amount">Amount</th>
+			</tr>
+			<% even = true %>
+			<% @gift_event.contributions.each do |gift| %>
+				<tr class="<%= even ? 'alt' : '' %>">
+					<% even = !even %>
+					<td><%= gift.name %></td>
+					<td><%= mail_to(gift.email) %></td>
+					<td><%= number_to_currency(gift.amount) %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+
+	<hr />
+
+	<h2>Make Some Changes</h2>
+
+	<%= form_for [:planner, @gift_event], :as => :gift_event, :url => {:action => :update}, :html => { :multipart => true } do |f| %>
+ 		<%= render 'gift_event_form', :f => f %>
+	<% end %>
+	<div class="clear"></div>
+
+</div>

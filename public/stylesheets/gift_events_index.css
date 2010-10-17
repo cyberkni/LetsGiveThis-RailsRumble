@@ -1,41 +1,40 @@
-#pitch {
+#shoulder {
   height: 250px;
-  border-bottom: 10px solid #c3c3c3;
-  background: #dbdbdb url(/theme/pitch.png) no-repeat top center; }
-  #pitch .gift {
+  padding-top: 0; }
+  #shoulder .gift {
     position: absolute;
     top: -140px;
     left: 194px;
     width: 208px;
     height: 180px;
     background: url(/theme/pitch-gift.png) no-repeat 0 0; }
-  #pitch dl {
+  #shoulder dl {
     position: relative;
     top: 70px; }
-    #pitch dl dt, #pitch dl dd {
+    #shoulder dl dt, #shoulder dl dd {
       position: absolute; }
-    #pitch dl dt {
+    #shoulder dl dt {
       display: block;
       top: 0;
       width: 300px;
       height: 39px;
       background-repeat: no-repeat;
       background-position: 3px 0; }
-      #pitch dl dt.simple {
+      #shoulder dl dt.simple {
         background-image: url(/theme/pitch-h2-simple.png); }
-        #pitch dl dt.simple, #pitch dl dt.simple + dd {
+        #shoulder dl dt.simple, #shoulder dl dt.simple + dd {
           left: 0; }
-      #pitch dl dt.fast {
+      #shoulder dl dt.fast {
         background-image: url(/theme/pitch-h2-fast.png); }
-        #pitch dl dt.fast, #pitch dl dt.fast + dd {
+        #shoulder dl dt.fast, #shoulder dl dt.fast + dd {
           left: 300px; }
-      #pitch dl dt.easy {
+      #shoulder dl dt.easy {
         background-image: url(/theme/pitch-h2-easy.png); }
-        #pitch dl dt.easy, #pitch dl dt.easy + dd {
+        #shoulder dl dt.easy, #shoulder dl dt.easy + dd {
           left: 600px; }
-      #pitch dl dt span {
+      #shoulder dl dt span {
         display: none; }
-    #pitch dl dd {
+    #shoulder dl dd {
       top: 55px;
       width: 278px;
       padding-left: 25px; }

@@ -1,10 +1,13 @@
-<div id='recentgifts'>
-  <h2>Recent Gift Amounts</h2>
-  <% if @gift_event.contributions.blank? %>
-    <p>No one has given yet</p>
-  <% else %>
-    <% @gift_event.contributions.each do |contribution| %>
-      <p><%= number_to_currency(contribution.amount) %></p>
-    <% end %>
-  <% end %>
+<h2>Recent Contributions</h2>
+<% if true || @gift_event.contributions.blank? %>
+	<p>No one has given anything yet.</p>
+	<p>
+		Spread the word by emailing the link to this page:<br />
+		<%= link_to @gift_event.gift_short_link, @gift_event.gift_short_link %>
+	</p>
+<% else %>
+<% @gift_event.contributions.each do |contribution| %>
+<p><%= number_to_currency(contribution.amount) %></p>
+<% end %>
+<% end %>
 </div>

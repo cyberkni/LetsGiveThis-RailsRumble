@@ -228,6 +228,38 @@ form {
 
 }
 
+div.box {
+	@include formelement;
+}
+
+table.grid {
+
+	width: 870px;
+	margin-left: 5px;
+	border-spacing: 10px 6px;
+	text-align: left;
+
+	tr.alt {
+		background-color: #eee;
+	}
+
+	th, td {
+		padding: 3px 10px;
+	}
+
+	th {
+		width: 200px;
+		height: 30px;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	td {
+		height: 30px;
+	}
+
+}
+
 @mixin selection {
 	background: #fff666;
 }
@@ -355,6 +387,15 @@ form {
 
 }
 
+#shoulder {
+
+	min-height: 80px;
+	padding-top: 35px;
+	border-bottom: 10px solid #c3c3c3;
+	background: #dbdbdb url(/theme/pitch.png) no-repeat top center;
+
+}
+
 #body {
 
 	border-top: 10px solid #c82717;
@@ -370,9 +411,14 @@ form {
 		font-family: Futura LT Condensed;
 		font-size: 24px;
 		text-transform: uppercase;
+
 		&.subtitle {
-			line-height: 24px;
-			font-size: 16px;
+			font-size: 18px;
+		}
+
+		+ h2.subtitle {
+			margin-top: -20px;
+			margin-bottom: -10px;
 		}
 
 	}

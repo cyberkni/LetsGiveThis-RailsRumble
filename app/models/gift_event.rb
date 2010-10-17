@@ -47,6 +47,10 @@ class GiftEvent
     gift_price - contribution_total
   end
 
+  def gift_price_formatted
+    '%.2f' % gift_price
+  end
+
   private
 
   def create_access_tokens

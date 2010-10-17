@@ -1,7 +1,9 @@
+<div id="progressbar" class="hidden" title="<%= @gift_event.percent_done %>"></div>
+
 <p id='givingprogress'>
-  <%= number_to_currency(@gift_event.contribution_total) %> raised!
-<% unless @gift_event.amount_remaining <= 0 %>
-  We are <%= number_to_percentage(@gift_event.percent_done, :precision => 2) %> to our goal. 
-  Only <%= number_to_currency(@gift_event.amount_remaining) %> to go!
-<% end %>
+	We have raised <strong><%= number_to_currency(@gift_event.contribution_total) %></strong>.<br />
+	<% unless @gift_event.amount_remaining <= 0 %>
+		With only <strong><%= number_to_currency(@gift_event.amount_remaining) %></strong> remaining,
+		we are <strong><%= number_to_percentage(@gift_event.percent_done, :precision => 2) %></strong> towards the goal.
+	<% end %>
 </p>
