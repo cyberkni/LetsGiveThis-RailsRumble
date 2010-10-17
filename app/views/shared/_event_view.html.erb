@@ -2,9 +2,8 @@
 <p>Planned by <%= @gift_event.gift_admin_name %></p>
 <%=raw generate_gift_title(@gift_event) %>
 <h2>$<%= @gift_event.gift_price %></h2>
-
-<h2>Give here:</h2>
-<p>something</p>
-<p><%= image_tag @gift_event.image.url(:thumb, false) %></p>
+<% unless @gift_event.gift_file_path.blank? %>
+  <div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
+<% end %>
 <%= render :partial => 'shared/giving_status_message' %>
 

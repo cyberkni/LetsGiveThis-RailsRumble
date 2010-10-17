@@ -1,5 +1,45 @@
 <h1>Welcome to Let's Give This</h1>
 <p>We are the place to go when you are organizing a group gift for someone. Just
-  setup a Gift here and send a link to your friends. No Login required even</p>
+  setup a Gift here and send a link to your friends. No Login required ever.</p>
 
-<%= link_to "Get Started", new_planner_event_url, :remote => true %>
+<h2>Let's Get Started</h2>
+
+<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
+  <div id='signup_phase1'>
+    <p> 
+      <%= f.label :gift_title, "What is the event that this gift is for?" %>
+      <%= f.text_field :gift_title %>
+    </p>
+    <p> 
+      <%= f.label :gift_name, "What is the gift?" %> 
+      <%= f.text_field :gift_name %>
+    </p>
+    <p> 
+      <%= f.label :gift_price, "How much is it?" %>
+      <%= f.text_field :gift_price %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+  </div>
+  <div id='signup_phase2'>
+      <p> 
+        <%= f.label :gift_admin_name, "What is your name?" %>
+        <%= f.text_field :gift_admin_name %>
+      </p>
+      <p> 
+        <%= f.label :gift_admin_email, "What is your email address?" %>
+        <%= f.text_field :gift_admin_email %>
+      </p>
+  </div>
+  <div id='signup_phase3'>
+      <p> 
+        <%= f.label :gift_link, "Is there a link to the gift that people can look at?" %>
+        <%= f.text_field :gift_link %>
+      </p>
+      <p>
+        <%= f.label :image, "Do you have a photo or image of the gift?" %>
+        <%= f.file_field :image %>
+      </p>
+  </div>
+<% end %>
