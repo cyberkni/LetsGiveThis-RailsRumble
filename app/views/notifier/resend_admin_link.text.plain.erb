@@ -2,6 +2,8 @@ Hi <%= @gift_events.first.gift_admin_name %>,
 
 As a reminder, you can find all your info at:
 
-<%= @admin_tokens.each { |x| print "#{x}\n"} %>
+<%= @admin_tokens.each do |token| %>
+  <%= token %>
+<% end %>
 
 The Let's Give This Crew
