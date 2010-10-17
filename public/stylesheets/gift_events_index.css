@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+#body > .bind {
+  background-image: url(/theme/body-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+p.makeitgo {
+  display: none; }
+
+p.admin_form_post {
+  display: none; }
+
+>>>>>>> a54d9feda3c4062b7f52df3f03c932ab1c1f9b53
 #pitch {
   height: 250px;
   border-bottom: 10px solid #c3c3c3;

@@ -38,7 +38,7 @@ class Planner::GiftEventsController < ActionController::Base
   def update
     @gift_event = GiftEvent.find_by_gift_admin_token(params[:id])
     respond_to do |format|
-      if @gift_event.update_attributes!(params[:gift_event])
+      if @gift_event.update_attributes(params[:gift_event])
         @gift_event.reload
         format.html { redirect_to planner_event_url(@gift_event.gift_admin_token) }
         format.js { render :action => :create }
