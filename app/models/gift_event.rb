@@ -1,6 +1,3 @@
-require 'paperclip'
-require 'mush'
-
 class GiftEvent
   include MongoMapper::Document
   include Paperclip::Glue
