@@ -1,0 +1,46 @@
+#body > .bind {
+  background-image: url(body-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+#pitch {
+  height: 250px;
+  border-bottom: 10px solid #c3c3c3;
+  background: #dbdbdb url(pitch.png) no-repeat top center; }
+  #pitch .gift {
+    position: absolute;
+    top: -140px;
+    left: 194px;
+    width: 208px;
+    height: 180px;
+    background: url(pitch-gift.png) no-repeat 0 0; }
+  #pitch dl {
+    position: relative;
+    top: 70px; }
+    #pitch dl dt, #pitch dl dd {
+      position: absolute; }
+    #pitch dl dt {
+      display: block;
+      top: 0;
+      width: 300px;
+      height: 39px;
+      background-repeat: no-repeat;
+      background-position: 0 0; }
+      #pitch dl dt.simple {
+        background-image: url(pitch-h2-simple.png); }
+        #pitch dl dt.simple, #pitch dl dt.simple + dd {
+          left: 0; }
+      #pitch dl dt.fast {
+        background-image: url(pitch-h2-fast.png); }
+        #pitch dl dt.fast, #pitch dl dt.fast + dd {
+          left: 300px; }
+      #pitch dl dt.easy {
+        background-image: url(pitch-h2-easy.png); }
+        #pitch dl dt.easy, #pitch dl dt.easy + dd {
+          left: 600px; }
+      #pitch dl dt span {
+        display: none; }
+    #pitch dl dd {
+      top: 55px;
+      width: 278px;
+      padding-left: 25px; }

@@ -1,0 +1,79 @@
+#body {
+
+	> .bind {
+		background-image: url(body-arrow.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+
+}
+
+#pitch {
+
+	height: 250px;
+	border-bottom: 10px solid #c3c3c3;
+	background: #dbdbdb url(pitch.png) no-repeat top center;
+
+	.gift {
+		position: absolute;
+		top: -140px;
+		left: 194px;
+		width: 208px;
+		height: 180px;
+		background: url(pitch-gift.png) no-repeat 0 0;
+	}
+
+	dl {
+
+		position: relative;
+		top: 70px;
+
+		dt, dd {
+			position: absolute;
+		}
+
+		dt {
+
+			display: block;
+			top: 0;
+			width: 300px;
+			height: 39px;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+
+			&.simple {
+				background-image: url(pitch-h2-simple.png);
+				&, & + dd {
+					left: 0;
+				}
+			}
+
+			&.fast {
+				background-image: url(pitch-h2-fast.png);
+				&, & + dd {
+					left: 300px;
+				}
+			}
+
+			&.easy {
+				background-image: url(pitch-h2-easy.png);
+				&, & + dd {
+					left: 600px;
+				}
+			}
+
+			span {
+				display: none;
+			}
+
+		}
+
+		dd {
+			top: 55px;
+			width: 278px;
+			padding-left: 25px;
+		}
+
+	}
+
+}
