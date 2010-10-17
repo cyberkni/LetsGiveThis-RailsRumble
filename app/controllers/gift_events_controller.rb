@@ -3,6 +3,7 @@ class GiftEventsController < ActionController::Base
   layout 'application'
   
   def index
+    @gift_event = GiftEvent.new
     render :action => 'index'
   end
   

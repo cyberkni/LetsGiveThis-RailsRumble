@@ -5,10 +5,10 @@
 
 		<dl>
 			<dt class="simple" title="Simple"><span>Simple</span></dt>
-			<dd>No accounts, no signups, no fees.  Just a <strong>better way</strong> to plan your gift.</dd>
+			<dd>No accounts, no signups, no fees.<br />Just a <strong>better way</strong> to plan your gift.</dd>
 
 			<dt class="fast" title="Fast"><span>Fast</span></dt>
-			<dd>Starting tracking your gift contributions <strong>quickly</strong>&hellip;<br />in under two minutes!</dd>
+			<dd>Starting tracking your gift contributions <strong>quickly</strong>&hellip; in under two minutes!</dd>
 
 			<dt class="easy" title="Easy"><span>Easy</span></dt>
 			<dd>No complex forms to navigate.<br />Just the bare <strong>essentials</strong> to start planning.</dd>
@@ -21,7 +21,7 @@
 
 	<h2>Start Here</h2>
 
-	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true }, :remote => true do |f| %>
+	<%= form_for [:planner, @gift_event], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true }, :remote => true do |f| %>
 		<p>
 			<%= f.label :gift_name, 'What is the gift?' %> 
 			<%= f.label :gift_name, '(Example: Dave\'s Skydiving Trip)' %> 
