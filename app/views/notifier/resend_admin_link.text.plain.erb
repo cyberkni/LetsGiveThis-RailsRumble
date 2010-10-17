@@ -1,6 +1,8 @@
-Hi <%= @gift_event.gift_admin_name %>,
+Hi <%= @gift_events.first.gift_admin_name %>,
 
 As a reminder, you can find all your info at:
+
+<%= @gift_tokens.each { |x| print "#{x}\n"} %>
 
 http://letsgivethis.com/event/<%= @gift_event.gift_admin_token %>
 
