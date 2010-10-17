@@ -26,7 +26,7 @@ class Planner::GiftEventsController < ActionController::Base
         format.html { redirect_to planner_event_url(@gift_event.gift_admin_token) }
         format.js { respond_with(@gift_event) }
       else
-        format.html { render :action => 'index' }
+        format.html {redirect_to('/', {:error => '<div class="notice"><p class="error">There was an error with your submission. Please try again.</p></div>'})}
         format.js { render :json => @gift_event.errors }
       end
     end

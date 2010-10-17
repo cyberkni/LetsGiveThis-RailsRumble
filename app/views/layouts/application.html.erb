@@ -36,6 +36,7 @@
 		<div class="notice"><p class="error">We recommend that you <a href="http://www.google.com/support/websearch/bin/answer.py?answer=23852">enable JavaScript</a> to experience this site properly.</p></div>
 	</noscript>
 	<%= flash[:notice] ? raw(flash[:notice]): '' %>
+	<%= flash[:error] ? raw(flash[:error]): '' %>
 
 	<div id="head">
 		<div class="bind">
