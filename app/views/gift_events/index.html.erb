@@ -23,23 +23,32 @@
     </p>
   </div>
   <div id='signup_phase2'>
-      <p> 
-        <%= f.label :gift_admin_name, "What is your name?" %>
-        <%= f.text_field :gift_admin_name %>
-      </p>
-      <p> 
-        <%= f.label :gift_admin_email, "What is your email address?" %>
-        <%= f.text_field :gift_admin_email %>
-      </p>
+    <p> 
+      <%= f.label :gift_admin_name, "What is your name?" %>
+      <%= f.text_field :gift_admin_name %>
+    </p>
+    <p> 
+      <%= f.label :gift_admin_email, "What is your email address?" %>
+      <%= f.text_field :gift_admin_email %>
+    </p>
   </div>
   <div id='signup_phase3'>
-      <p> 
-        <%= f.label :gift_link, "Is there a link to the gift that people can look at?" %>
-        <%= f.text_field :gift_link %>
-      </p>
-      <p>
-        <%= f.label :image, "Do you have a photo or image of the gift?" %>
-        <%= f.file_field :image %>
-      </p>
+    <p> 
+      <%= f.label :gift_link, "Is there a link to the gift that people can look at?" %>
+      <%= f.text_field :gift_link %>
+    </p>
+    <p>
+      <%= f.label :image, "Do you have a photo or image of the gift?" %>
+      <%= f.file_field :image %>
+    </p>
   </div>
 <% end %>
+
+<div id='forgot_urls'>
+<h3>Lost your admin link?</h3>
+<p>Tell us your email and we'll email you the links.</p>
+<%= form_tag '/admin_recovery', :remote => true do %>
+  <%= text_field_tag 'admin_email' %>
+  <%= submit_tag "Submit" %>
+<% end %>
+</div>
