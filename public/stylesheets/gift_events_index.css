@@ -6,6 +6,9 @@
 p.makeitgo {
   display: none; }
 
+p.admin_form_post {
+  display: none; }
+
 #pitch {
   height: 250px;
   border-bottom: 10px solid #c3c3c3;
