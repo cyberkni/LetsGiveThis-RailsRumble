@@ -6,3 +6,8 @@ Letsgivethis::Application.initialize!
 
 # Turn off auto TLD
 ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
+
+# Restrict SASS to SCSS
+sass_options = {
+  :syntax => :scss
+}

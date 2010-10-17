@@ -1,17 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-  <title>Let's Give This: A Group Gift Planning App</title>
-  <%= stylesheet_link_tag :all %>
-  <%= stylesheet_link_tag 'main' %>
-  <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'jquery.remotipart' %>
-  <%= csrf_meta_tag %>
+
+	<!--
+
+   		    __       __        ______           ________   _
+  		©  / /  ___ / /_'__   / ___(_)  _____  /_  __/ /  (_)__
+ 		  / /__/ -_) __(_-<  / (_ / / |/ / -_)  / / / _ \/ (_-<
+		 /____/\__/\__/___/  \___/_/|___/\__/  /_/ /_//_/_/___/
+
+		 A few rights reserved.
+		 Ask, just in case.
+
+	-->
+
+	<title>Let's Give This - The Group Gift Planning App</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="en" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<meta name="viewport" content="width=1000" />
+	<%= csrf_meta_tag %>
+
+	<%= stylesheet_link_tag :all %>
+	<%= stylesheet_link_tag 'index' %>
+
 </head>
+
 <body>
-<div id='main'>
-  <%= yield %>
-</div>
+
+	<noscript>
+		<div class="notice"><p class="error">We recommend that you <a href="http://www.google.com/support/websearch/bin/answer.py?answer=23852">enable JavaScript</a> to experience this site properly.</p></div>
+	</noscript>
+
+	<div id="head">
+		<div class="bind">
+
+			<h1 title="Let'sGiveThis.com"><a class="implicit" href="/"><span>Let's Give This</span></a></h1>
+			<h2 title="Group gifts, simplified."><span>Group gifts, simplified.</span></h2>
+			<p title="We make it simpler to plan a group gift.  Email the details, collect a contribution from everyone involved."><span>We make it simpler to <em>plan</em> a group gift.  Email the details, collect a contribution from everyone involved.</span></p>
+
+		</div>
+	</div>
+
+	<div id="body">
+
+		<%= yield %>
+
+	</div>
+
+	<div id="foot">
+		<div class="bind">
+
+			<p>Made by <a href="mailto:dan@van.derveer.com">these</a> <a href="mailto:shanel@gmail.com">three</a> <a href="mailto:dave@rouxfamily.org">guys</a> for <a href="http://railsrumble.com/">Rails Rumble MMX</a>.</p>
+			<p>&copy; <strong>Let's Give This</strong>.  A few rights reserved.  Ask, just in case.</p>
+
+		</div>
+	</div>
+
+	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag 'jquery.remotipart' %>
+
 </body>
+
 </html>

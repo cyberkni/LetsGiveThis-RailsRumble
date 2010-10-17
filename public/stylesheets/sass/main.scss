@@ -1,1 +1,270 @@
-#add sass here
+/*
+ * XHTML defaults
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+	height: 100%;
+	background: #fff;
+	color: #2e2b2b;
+}
+
+	html {
+		overflow-y: scroll;								/* always show vertical scrollbar */
+		border-top: 20px solid #2e2b2b;
+	}
+
+	body, h2, button, input, select, textarea {
+		font: normal normal normal 16px/24px "lucida sans", tahoma, arial, helvetica, sans-serif;
+		letter-spacing: normal;
+	}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+
+	text-decoration: none;
+
+	&:link, &:visited, &:active {
+		border-bottom: 1px dotted #2e2b2b;
+		color: #2e2b2b;
+		font-weight: bold;
+		&.implicit {
+			border-bottom: 0;
+		}
+	}
+
+	&:hover, &:focus {
+		border-bottom-style: solid;
+		border-bottom-color: #000;
+		color: #000;
+		&.implicit {
+			border-bottom: 0;
+		}
+	}
+
+}
+
+@mixin a_custom($normal, $hover) {
+
+	a {
+
+		&:link, &:visited, &:active {
+			border-bottom-color: $normal;
+			color: $normal;
+		}
+
+		&:hover, &:focus {
+			border-bottom-color: $hover;
+			color: $hover;
+		}
+
+	}
+
+}
+
+em, strong {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+	em {
+		font-style: italic;
+	}
+
+	strong {
+		color: #c82717;
+		font-weight: bold;
+	}
+
+@mixin selection {
+	background: #fff666;
+}
+
+	/* redundancy: FF bug prevents selector combination */
+	::selection { @include selection; }
+	::-moz-selection { @include selection; }
+
+/*
+ * Common mixins
+ */
+
+@mixin clear {
+	display: block;
+	clear: both;
+}
+
+/*
+ * Framework
+ */
+
+.bind {
+
+	position: relative;
+	width: 900px;
+	height: 100%;
+	margin: 0 auto;
+
+}
+
+.notice {
+
+	padding: 15px 0 15px 30px;
+	border-top: 4px solid #fff;
+	background-color: #dbdbdb;
+	white-space: nowrap;
+
+	p {
+
+		width: 900px;
+		margin: 5px auto;
+		padding-left: 22px;
+		line-height: 20px;
+		font-size: 16px;
+
+		&.info,
+		&.success,
+		&.warning,
+		&.error {
+			background-repeat: no-repeat;
+		}
+
+			&.info {
+				background-image: url(icon-info.png);
+				background-position: 0 3px;
+			}
+
+			&.success {
+				color: #3b8a25;
+				background-image: url(icon-tick.png);
+				background-position: 0 4px;
+			}
+
+			&.warning {
+				color: #ff831f;
+				background-image: url(icon-warning.png);
+				background-position: 0 3px;
+			}
+
+			&.error {
+				color: #c82717;
+				background-image: url(icon-alert.png);
+				background-position: 0 3px;
+			}
+
+	}
+
+	.smallprint {
+		color: #888;
+		font-size: 12px;
+	}
+
+}
+
+#head {
+
+	position: relative;
+	height: 362px;
+	border-top: 4px solid #fff;
+	border-bottom: 4px solid #fff;
+	background: #fff url(head.png) repeat 0 0;
+
+	h1 {
+
+		position: absolute;
+		top: 36px;
+		left: 0;
+		width: 317px;
+		height: 175px;
+		background: transparent url(logo.png) no-repeat 0 0;
+
+		a {
+			display: block;
+			width: 317px;
+			height: 175px;
+			background: inherit;
+		}
+
+	}
+
+	h2 {
+		position: absolute;
+		top: 107px;
+		left: 417px;
+		width: 377px;
+		height: 56px;
+		background: url(head-h2-home.png) no-repeat 0 0;
+	}
+
+	p {
+		position: absolute;
+		top: 184px;
+		left: 419px;
+		width: 435px;
+		height: 82px;
+		background: url(head-p-home.png) no-repeat 0 0;
+	}
+
+	h1 span,
+	h2 span,
+	p span {
+		display: none;
+	}
+
+}
+
+#body {
+
+	border-top: 10px solid #c82717;
+
+	p {
+		margin: 0 25px 10px 25px;
+	}
+
+	h2 {
+
+		margin: 0 25px 5px 25px;
+		white-space: pre-wrap;
+		font-size: 20px;
+		font-weight: lighter;
+		&.subtitle {
+			line-height: 24px;
+			font-size: 16px;
+		}
+
+	}
+
+	> .bind {
+		padding-top: 30px;
+	}
+
+}
+
+#foot {
+
+	border-top: 10px solid #c3c3c3;
+	color: #c3c3c3;
+	background: #2e2b2b;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: right;
+
+	@include a_custom(#c3c3c3, #fff);
+
+	strong {
+		color: inherit;
+	}
+
+	> .bind {
+		padding: 25px;
+	}
+
+}
