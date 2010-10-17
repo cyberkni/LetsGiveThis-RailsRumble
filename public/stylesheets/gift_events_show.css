@@ -1,0 +1,57 @@
+h2 span {
+  font-size: 18px; }
+
+#price {
+  display: inline-block;
+  float: right;
+  height: 31px;
+  padding: 7px 10px 0 33px;
+  background-image: url(/theme/icon-dollar.png);
+  background-repeat: no-repeat;
+  background-position: 9px 4px;
+  font-size: 28px;
+  font-weight: bold; }
+
+#progressbar {
+  float: left;
+  width: 150px;
+  height: 40px;
+  margin: 4px 20px 0 25px; }
+
+table th.amount {
+  width: 60px; }
+
+#gift_event_gift_name {
+  width: 400px; }
+
+label[for="gift_event_gift_price"],
+label[htmlFor="gift_event_gift_price"] {
+  margin-left: 30px; }
+
+#gift_event_gift_price {
+  clear: none;
+  width: 140px; }
+
+#gift_event_gift_price_icon {
+  display: block;
+  clear: both;
+  float: left;
+  width: 20px;
+  height: 31px;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-image: url(/theme/icon-dollar.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+#gift_event_continue {
+  width: 126px;
+  background-image: url(/theme/button-continue.png); }
+
+#gift_event_submit {
+  width: 107px;
+  background-image: url(/theme/button-update.png); }
+
+#gift_event_gift_admin_email,
+#gift_event_gift_link {
+  width: 450px; }
