@@ -25,7 +25,7 @@ class Planner::GiftEventsController < ActionController::Base
         format.js { respond_with(@gift_event) }
       else
         format.html { render :action => 'new' }
-        format.js { render :action => 'new' }
+        format.js { render :json => @gift_event.errors }
       end
     end
   end

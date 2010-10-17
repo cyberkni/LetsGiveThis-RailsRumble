@@ -23,15 +23,13 @@
 
 	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
 		<p>
-			<%= f.label :gift_title, 'What is your group gift?' %>
+			<%= f.label :gift_title, 'Who or what is the gift for?' %>
 			<%= f.text_field :gift_title %>
 		</p>
-<!--
 		<p>
 			<%= f.label :gift_name, 'What is the gift?' %> 
 			<%= f.text_field :gift_name %>
 		</p>
--->
 		<p>
 			<%= f.label :gift_price, 'How much?' %>
 			<%= f.text_field :gift_price %>
