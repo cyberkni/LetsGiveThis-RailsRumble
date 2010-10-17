@@ -26,9 +26,11 @@ class GiftEvent
   DOMAIN = /([a-z0-9\-]+\.?)*([a-z0-9]{2,})\.[a-z]{2,}/
   NUMERIC_IP = /(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5])(?:\/(?:[12]?\d|3[012])|-(?>(?:1?\d?\d|2[0-4]\d|25[0-5])\.){3}(?:1?\d?\d|2[0-4]\d|25[0-5]))?/
 
-  validates_format_of :gift_link, :with => /^((localhost)|#{DOMAIN}|#{NUMERIC_IP})#{PORT}$/, :allow_blank=> true
+  validates_format_of :gift_link, :with => /^(http:\/\/|https:\/\/)*((localhost)|#{DOMAIN}|#{NUMERIC_IP})/, :allow_blank => true
 
   has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
+
+  after_save :check_for_completion_and_notify
 
   def contribution_total
     contributions.inject(0) do |sum, c|
@@ -63,6 +65,12 @@ class GiftEvent
     if self.gift_short_link.blank?
       # I know there must be a better way than this...
       self.gift_short_link = bitly.shorten "http://letsgivethis.com/event/#{self.access_token}"
+    end
+  end
+  
+  def check_for_completion_and_notify
+    if self.amount_remaining <= 0
+      Notifier.over_the_line(self).deliver
     end
   end
 end
