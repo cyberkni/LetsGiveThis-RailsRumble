@@ -4,6 +4,8 @@ gem 'rails', '3.0.1'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+gem 'haml'
+
 # To use debugger
 gem 'ruby-debug'
 gem 'jquery-rails'
