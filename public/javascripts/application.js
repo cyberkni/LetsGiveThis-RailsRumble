@@ -126,7 +126,7 @@ $().ready(function() {
 });
 
 //form expansion handler
-$('input.makeitgo').click(function() {
+$('p.makeitgo').click(function() {
   //Make sure the error class is not applied to any of the inputs before doing this
   $('p.makeitgo').slideUp();
   $('div.more').slideDown();
