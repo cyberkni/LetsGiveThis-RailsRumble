@@ -18,8 +18,10 @@ class GiftEventsController < ActionController::Base
   
   def admin_recovery
     @gift_events = GiftEvent.find_all_by_gift_admin_email(params[:admin_email])
-    Notifier.resend_admin_link(@gift_events).deliver
-    logger.info "mailed to #{@gift_events.first.gift_admin_email}"
-    render
+    unless @gift_events.blank?
+      Notifier.resend_admin_link(@gift_events).deliver
+      logger.info "mailed to #{@gift_events.first.gift_admin_email}"
+    end
+    redirect_to({:action => :index}, {:notice => '<div class="notice"><p class="success">We just dispatched the email explaining how to manage your group gift.</p></div>'})
   end
 end
