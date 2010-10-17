@@ -83,19 +83,19 @@ strong {
     .notice p.info, .notice p.success, .notice p.warning, .notice p.error {
       background-repeat: no-repeat; }
     .notice p.info {
-      background-image: url(icon-info.png);
+      background-image: url(/theme/icon-info.png);
       background-position: 0 3px; }
     .notice p.success {
       color: #3b8a25;
-      background-image: url(icon-tick.png);
+      background-image: url(/theme/icon-tick.png);
       background-position: 0 4px; }
     .notice p.warning {
       color: #ff831f;
-      background-image: url(icon-warning.png);
+      background-image: url(/theme/icon-warning.png);
       background-position: 0 3px; }
     .notice p.error {
       color: #c82717;
-      background-image: url(icon-alert.png);
+      background-image: url(/theme/icon-alert.png);
       background-position: 0 3px; }
   .notice .smallprint {
     color: #888;
@@ -106,14 +106,14 @@ strong {
   height: 362px;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff;
-  background: white url(head.png) repeat 0 0; }
+  background: white url(/theme/head.png) repeat 0 0; }
   #head h1 {
     position: absolute;
     top: 36px;
     left: 0;
     width: 317px;
     height: 175px;
-    background: transparent url(logo.png) no-repeat 0 0; }
+    background: transparent url(/theme/logo.png) no-repeat 0 0; }
     #head h1 a {
       display: block;
       width: 317px;
@@ -125,14 +125,14 @@ strong {
     left: 417px;
     width: 377px;
     height: 56px;
-    background: url(head-h2-home.png) no-repeat 0 0; }
+    background: url(/theme/head-h2-home.png) no-repeat 0 0; }
   #head p {
     position: absolute;
     top: 184px;
     left: 419px;
     width: 435px;
     height: 82px;
-    background: url(head-p-home.png) no-repeat 0 0; }
+    background: url(/theme/head-p-home.png) no-repeat 0 0; }
   #head h1 span,
   #head h2 span,
   #head p span {
@@ -170,5 +170,3 @@ strong {
     color: inherit; }
   #foot > .bind {
     padding: 25px; }
-
-/* [EOF] */

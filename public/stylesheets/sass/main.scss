@@ -138,25 +138,25 @@ em, strong {
 		}
 
 			&.info {
-				background-image: url(icon-info.png);
+				background-image: url(/theme/icon-info.png);
 				background-position: 0 3px;
 			}
 
 			&.success {
 				color: #3b8a25;
-				background-image: url(icon-tick.png);
+				background-image: url(/theme/icon-tick.png);
 				background-position: 0 4px;
 			}
 
 			&.warning {
 				color: #ff831f;
-				background-image: url(icon-warning.png);
+				background-image: url(/theme/icon-warning.png);
 				background-position: 0 3px;
 			}
 
 			&.error {
 				color: #c82717;
-				background-image: url(icon-alert.png);
+				background-image: url(/theme/icon-alert.png);
 				background-position: 0 3px;
 			}
 
@@ -175,7 +175,7 @@ em, strong {
 	height: 362px;
 	border-top: 4px solid #fff;
 	border-bottom: 4px solid #fff;
-	background: #fff url(head.png) repeat 0 0;
+	background: #fff url(/theme/head.png) repeat 0 0;
 
 	h1 {
 
@@ -184,7 +184,7 @@ em, strong {
 		left: 0;
 		width: 317px;
 		height: 175px;
-		background: transparent url(logo.png) no-repeat 0 0;
+		background: transparent url(/theme/logo.png) no-repeat 0 0;
 
 		a {
 			display: block;
@@ -201,7 +201,7 @@ em, strong {
 		left: 417px;
 		width: 377px;
 		height: 56px;
-		background: url(head-h2-home.png) no-repeat 0 0;
+		background: url(/theme/head-h2-home.png) no-repeat 0 0;
 	}
 
 	p {
@@ -210,7 +210,7 @@ em, strong {
 		left: 419px;
 		width: 435px;
 		height: 82px;
-		background: url(head-p-home.png) no-repeat 0 0;
+		background: url(/theme/head-p-home.png) no-repeat 0 0;
 	}
 
 	h1 span,
