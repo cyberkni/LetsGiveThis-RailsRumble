@@ -19,7 +19,7 @@ class GiftEventsController < ActionController::Base
   def admin_recovery
     @gift_events = GiftEvent.find_all_by_gift_admin_email(params[:admin_email])
     Notifier.resend_admin_link(@gift_events)
-    logger.info "mailed to #{gift_events.first.gift_admin_email}"
+    logger.info "mailed to #{@gift_events.first.gift_admin_email}"
     render
   end
 end
