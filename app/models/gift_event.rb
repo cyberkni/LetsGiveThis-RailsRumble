@@ -11,6 +11,7 @@ class GiftEvent
   key :gift_price, Float, :required => true
   key :gift_link, String
   key :gift_file_path, String
+
   # image crap
   key :image_file_name, String
   key :image_content_type, String
