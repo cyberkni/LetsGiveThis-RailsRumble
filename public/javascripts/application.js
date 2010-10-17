@@ -1,42 +1,56 @@
-/*
- * Add existence handler to jQuery
- */
-$.fn.exists = function() {
-	return this.is('*');
-};
-
-/*
- * Add forEach method
- */
-if (!Array.prototype.forEach) {
-	Array.prototype.forEach = function(fn /*, _this*/) {
-		var len = this.length >>> 0;
-		if (typeof fn != 'function') {
-			throw new TypeError();
-		}
-		var _this = arguments[1];
-		for (var i = 0; i < len; i++) {
-			if (i in this) {
-				fn.call(_this, this[i], i, this);
-			}
-		}
-	};
-}
-
-/*
- * Remove 'px' suffix and convert string to integer
- */
-if (!String.prototype.pxToInt) {
-	String.prototype.pxToInt = function() {
-		return parseInt(this.substr(0, this.lastIndexOf('px'))) || 0;
-	};
-}
-
 /**
  * Common entry point
  * Wait for DOM to load
  */
 $(document).ready(function() {
+
+	/*
+	 * Add existence handler to jQuery
+	 */
+	$.fn.exists = function() {
+		return this.is('*');
+	};
+
+	/*
+	 * Add forEach method
+	 */
+	if (!Array.prototype.forEach) {
+		Array.prototype.forEach = function(fn /*, _this*/) {
+			var len = this.length >>> 0;
+			if (typeof fn != 'function') {
+				throw new TypeError();
+			}
+			var _this = arguments[1];
+			for (var i = 0; i < len; i++) {
+				if (i in this) {
+					fn.call(_this, this[i], i, this);
+				}
+			}
+		};
+	}
+
+	/*
+	 * Init jQuery Validation plugin
+	 */
+	$.validator.setDefaults({
+		debug: false,
+		focusInvalid: true,
+		focusCleanup: false,
+		errorElement: 'span',
+		errorPlacement: function(error, element) {
+			// don't show error messages
+			return true;
+		}
+	});
+
+	/*
+	 * Remove 'px' suffix and convert string to integer
+	 */
+	if (!String.prototype.pxToInt) {
+		String.prototype.pxToInt = function() {
+			return parseInt(this.substr(0, this.lastIndexOf('px'))) || 0;
+		};
+	}
 
  	// Initialise typeface.js early to avoid flickering
 	_typeface_js.initialize();
@@ -94,33 +108,4 @@ $(document).ready(function() {
 		handler.call(this);
 	}
 
-});
-
-//Index javascript validators
-$().ready(function() {
-	$("#gift_event_new").validate({
-		rules: {
-			'gift_event[gift_title]': "required",
-			'gift_event[gift_name]': "required",
-			'gift_event[gift_price]': "required",
-			'gift_event[gift_admin_name]': {
-				required: true,
-				minlength: 2
-			},
-			'gift_event[gift_admin_email]': {
-				required: true,
-				email: true
-			},
-		},
-		messages: {
-		  'gift_event[gift_title]': "Please tell us who or what the gift is for.",
-		  'gift_event[gift_name]': "Please tell us what the gift is.",
-		  'gift_event[gift_price]': "Please tell us how much the gift is.",
-		  'gift_event[gift_admin_name]': {
-		    requred: "Please enter your name",
-		    minlength: "Thats not long enough to be a name. Unless you are Prince."
-		  },
-		  'gift_event[gift_admin_email]': "Please enter a valid email address."
-		}
-	});
 });

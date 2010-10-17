@@ -1,7 +1,16 @@
 <h2>Already planned a gift?</h2>
-<p>Enter your email address and we will resend the link to manage your gift.</p>
+<p>
+	You can track your group gift using the link that was emailed to you.<br />
+	If you lost this email, we can always resend it.
+</p>
 
-<%= form_tag '/admin_recovery', :remote => true do %>
-	<%= text_field_tag 'admin_email' %>
-	<%= submit_tag 'Continue' %>
+<%= form_tag '/admin_recovery', :id => 'admin_recovery', :remote => true do %>
+	<p>
+		<%= label_tag 'admin_email', 'What is your email address?' %> 
+		<%= text_field_tag 'admin_email' %>
+	</p>
+	<p>
+		<%= submit_tag 'Continue', :id => 'admin_submit', :class => 'inline' %>
+	</p>
 <% end %>
+<div class="clear"></div>

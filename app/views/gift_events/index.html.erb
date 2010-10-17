@@ -23,21 +23,28 @@
 
 	<%= form_for [:planner, GiftEvent.new], :as => :gift_event, :url => planner_event_index_url, :html => { :multipart => true } do |f| %>
 		<p>
-			<%= f.label :gift_title, 'Who or what is the gift for?' %>
-			<%= f.text_field :gift_title %>
-		</p>
-		<p>
 			<%= f.label :gift_name, 'What is the gift?' %> 
+			<%= f.label :gift_name, 'Example: Dave\'s Skydiving Trip' %> 
 			<%= f.text_field :gift_name %>
 		</p>
 		<p>
 			<%= f.label :gift_price, 'How much?' %>
+			<span id="gift_event_gift_price_icon" title="$"></span>
 			<%= f.text_field :gift_price %>
 		</p>
 		<p>
-			<%= f.submit 'Continue' %>
+			<input class="inline hidden" id="gift_event_continue" type="button" value="Continue" />
 		</p>
 		<div class="more">
+			<p>
+				<%= f.label :gift_title, 'Whom is the gift for?' %>
+				<%= f.text_field :gift_title %>
+			</p>
+			<p>
+				<%= f.label :gift_link, 'Do you have a link with more details?' %>
+				<%= f.label :gift_link, '(optional)' %>
+				<%= f.text_field :gift_link %>
+			</p>
 			<p>
 				<%= f.label :gift_admin_name, 'Your name?' %>
 				<%= f.text_field :gift_admin_name %>
@@ -47,15 +54,18 @@
 				<%= f.text_field :gift_admin_email %>
 			</p>
 			<p>
-				<%= f.label :gift_link, 'Do you have a link with more details?' %>
-				<%= f.text_field :gift_link %>
+				<%= f.label :image, 'Do you have a photo?' %>
+				<%= f.label :image, '(optional)' %>
+				<%= f.file_field :image %>
 			</p>
 			<p>
-				<%= f.label :image, 'Do you have a photo?' %>
-				<%= f.file_field :image %>
+				<%= f.submit 'Finish', :class => 'inline' %>
 			</p>
 		</div>
 	<% end %>
+	<div class="clear"></div>
+
+	<hr />
 
 	<%= render :partial => 'shared/admin_link_recovery' %>
 

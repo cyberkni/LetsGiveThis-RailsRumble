@@ -1,8 +1,3 @@
-#body > .bind {
-  background-image: url(/theme/body-arrow.png);
-  background-repeat: no-repeat;
-  background-position: 0 0; }
-
 #pitch {
   height: 250px;
   border-bottom: 10px solid #c3c3c3;
@@ -44,3 +39,42 @@
       top: 55px;
       width: 278px;
       padding-left: 25px; }
+
+#body > .bind {
+  padding-top: 50px;
+  background-image: url(/theme/body-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+#body #gift_event_gift_name {
+  width: 400px; }
+#body label[for="gift_event_gift_price"],
+#body label[htmlFor="gift_event_gift_price"] {
+  margin-left: 30px; }
+#body #gift_event_gift_price {
+  clear: none;
+  width: 140px; }
+#body #gift_event_gift_price_icon {
+  display: block;
+  clear: both;
+  float: left;
+  width: 20px;
+  height: 31px;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-image: url(/theme/icon-dollar.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+#body #gift_event_continue,
+#body #admin_submit {
+  width: 126px;
+  background-image: url(/theme/button-continue.png); }
+#body #gift_event_submit {
+  width: 98px;
+  background-image: url(/theme/button-finish.png); }
+#body div.more {
+  width: 100%;
+  padding-top: 50px; }
+#body #gift_event_gift_admin_email,
+#body #gift_event_gift_link,
+#body #admin_email {
+  width: 450px; }

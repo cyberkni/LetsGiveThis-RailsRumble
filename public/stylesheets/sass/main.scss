@@ -1,4 +1,23 @@
 /*
+ * Common mixins and classes
+ */
+
+@mixin clear {
+	display: block;
+	clear: both;
+	height: 1px;								/* add 1px */
+	margin-bottom: -1px;						/* undo it */
+}
+
+	.clear {
+		@include clear;
+	}
+
+.hidden {
+	display: none;
+}
+
+/*
  * XHTML defaults
  */
 
@@ -85,68 +104,128 @@ em, strong {
 		font-weight: bold;
 	}
 
+hr {
+	clear: both;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 2px dashed #dbdbdb;
+}
+
 @mixin formelement {
-	width: 300px;
 	padding: 6px 7px;
 	border: 3px solid #c3c3c3;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
+	background-color: #eee;
 }
 
-@mixin formbutton {
-	width: auto;
-	padding-left: 20px;
-	padding-right: 20px;
-	cursor: pointer;
-}
+	@mixin formelementactive {
+		background-color: #fff;
+	}
 
-@mixin formbuttonhover {
-}
+	@mixin formbutton {
+		width: auto;
+		height: 46px;
+		padding-left: 20px;
+		padding-right: 20px;
+		cursor: pointer;
+		border: 0;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		color: transparent;
+	}
+
+		@mixin formbuttonhover {
+			background-position: 0 -46px;
+		}
 
 form {
 
-	margin-bottom: 20px;
+	@include clear;
+	margin-top: -15px;
 
-	& >h2 {
-		margin-top: 100px;
+	+ .clear {
+		margin-bottom: 30px;
 	}
 
 	fieldset {}
 
-	label {}
+	p {
+		float: left;
+	}
 
-	button,
+	label {
+
+		float: left;
+		clear: both;
+		margin-top: 15px;
+		margin-bottom: 10px;
+
+		+ label {
+			clear: none;
+			margin-left: 15px;
+			margin-bottom: 0;
+			color: #9e9d9d;
+			line-height: 28px;
+			font-size: 12px;
+		}
+
+	}
+
 	input,
 	select,
 	textarea {
 		@include formelement;
+		float: left;
+		clear: both;
 	}
 
 		input:focus, input.focus,
 		select:focus, select.focus,
 		textarea:focus, textarea.focus {
+			@include formelementactive;
 		}
 
-		textarea {
+		input.error,
+		select.error,
+		textarea.error {
+			border-color: #c82717;
 		}
 
-		input[type='checkbox'] {
-			width: auto;
-			float: left;
+		input {
+			width: 300px;
 		}
+
+			input[type='checkbox'] {
+				width: auto;
+				float: left;
+			}
+
+			input[type='file'] {
+				color: #777;
+			}
+
+			button,
+			input[type='button'],
+			input[type='submit'],
+			input[type='reset'] {
+
+				@include formbutton;
+				&:hover {
+					@include formbuttonhover;
+				}
+
+				&.inline {
+					margin-top: 46px;
+				}
+
+			}
 
 		select {}
 
-		button,
-		input[type='submit'],
-		input[type='reset'] {
+		textarea {}
 
-			@include formbutton;
-			&:hover {
-				@include formbuttonhover;
-			}
-
-		}
 }
 
 @mixin selection {
