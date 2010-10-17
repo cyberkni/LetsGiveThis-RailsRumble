@@ -108,46 +108,4 @@ $(document).ready(function() {
 		handler.call(this);
 	}
 
-<<<<<<< HEAD
 });
-=======
-});
-
-//Index javascript validators
-$().ready(function() {
-  $('p.makeitgo').show()
-  $('div.more').hide();
-	$("#gift_event_new").validate({
-		rules: {
-			'gift_event[gift_title]': "required",
-			'gift_event[gift_name]': "required",
-			'gift_event[gift_price]': "required",
-			'gift_event[gift_admin_name]': {
-				required: true,
-				minlength: 2
-			},
-			'gift_event[gift_admin_email]': {
-				required: true,
-				email: true
-			},
-		},
-		messages: {
-		  'gift_event[gift_title]': "Please tell us who or what the gift is for.",
-		  'gift_event[gift_name]': "Please tell us what the gift is.",
-		  'gift_event[gift_price]': "Please tell us how much the gift is.",
-		  'gift_event[gift_admin_name]': {
-		    requred: "Please enter your name",
-		    minlength: "Thats not long enough to be a name. Unless you are Prince."
-		  },
-		  'gift_event[gift_admin_email]': "Please enter a valid email address."
-		}
-	});
-});
-
-//form expansion handler
-$('p.makeitgo').click(function() {
-  //Make sure the error class is not applied to any of the inputs before doing this
-  $('p.makeitgo').slideUp();
-  $('div.more').slideDown();
-});
->>>>>>> a54d9feda3c4062b7f52df3f03c932ab1c1f9b53
