@@ -21,6 +21,8 @@ class Planner::GiftEventsController < ActionController::Base
     respond_to do |format|
       if @gift_event.save
         @gift_event.reload
+        Notifier.send_gift_event_admin_info(@gift_event).deliver
+        logger.info "mailed initial info to #{@gift_event.gift_admin_email}"
         format.html { redirect_to planner_event_url(@gift_event.gift_admin_token) }
         format.js { respond_with(@gift_event) }
       else
