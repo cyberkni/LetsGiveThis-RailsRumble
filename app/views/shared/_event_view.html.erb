@@ -3,7 +3,11 @@
 <%=raw generate_gift_title(@gift_event) %>
 <h2>$<%= @gift_event.gift_price %></h2>
 <% unless @gift_event.image_file_name.blank? %>
-  <div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
+  <% if @gift_event.gift_link.blank? %>
+    <div><%= image_tag @gift_event.image.url(:thumb, false) %></div>
+  <% else %>
+    <div><%= link_to(image_tag(@gift_event.image.url(:thumb, false)), @gift_event.gift_link) %></div>
+  <% end %>
 <% end %>
 <%= render :partial => 'shared/giving_status_message' %>
 
