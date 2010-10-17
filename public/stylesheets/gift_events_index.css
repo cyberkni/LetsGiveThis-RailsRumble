@@ -3,6 +3,9 @@
   background-repeat: no-repeat;
   background-position: 0 0; }
 
+div.more {
+  display: none; }
+
 #pitch {
   height: 250px;
   border-bottom: 10px solid #c3c3c3;

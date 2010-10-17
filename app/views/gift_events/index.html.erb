@@ -34,9 +34,7 @@
 			<%= f.label :gift_price, 'How much?' %>
 			<%= f.text_field :gift_price %>
 		</p>
-		<p>
-			<%= f.submit 'Continue' %>
-		</p>
+		<p class="makeitgo">More</p>
 		<div class="more">
 			<p>
 				<%= f.label :gift_admin_name, 'Your name?' %>
@@ -54,6 +52,9 @@
 				<%= f.label :image, 'Do you have a photo?' %>
 				<%= f.file_field :image %>
 			</p>
+			<p>
+  			<%= f.submit 'Continue' %>
+  		</p>
 		</div>
 	<% end %>
 
