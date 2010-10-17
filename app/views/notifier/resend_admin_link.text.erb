@@ -1,0 +1,11 @@
+Hi <%= @gift_events.first.gift_admin_name %>,
+
+As a reminder, you can find all your gift(s) at:
+
+<%= @gift_events.each do |event| %>
+<%= event.gift_title %> - <%= event.gift_name %> Admin Link:
+  http://www.letsgivethis.com/planner/event/<%= event.gift_admin_token %>
+<% end %>
+
+
+The Let's Give This Crew
