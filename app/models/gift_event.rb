@@ -29,7 +29,7 @@ class GiftEvent
 
   validates_format_of :gift_link, :with => /^(http:\/\/|https:\/\/)*((localhost)|#{DOMAIN}|#{NUMERIC_IP})/, :allow_blank => true
 
-  has_attached_file :image, :styles => { :medium => "600x600>", :thumb => "200x200>" }
+  has_attached_file :image, :styles => { :thumb => "200x200>" }
 
   after_save :check_for_completion_and_notify
 
