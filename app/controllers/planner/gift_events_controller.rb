@@ -9,7 +9,11 @@ class Planner::GiftEventsController < ActionController::Base
 
   def show
     @gift_event = GiftEvent.find_by_gift_admin_token(params[:id])
-    respond_with(@gift_event)
+    if @gift_event
+      respond_with(@gift_event)
+    else
+      render :action => 'not_found'
+    end
   end
 
   def create

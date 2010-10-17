@@ -9,9 +9,9 @@ class GiftEventContributionsController < ApplicationController
     respond_to do |format|
       if @contribution.valid? and @gift_event.save
         format.html { redirect_to event_url(@gift_event.access_token) }
-        format.js { respond_with(@contribution)}
+        format.js { render :action => :create}
       else
-        format.html {}
+        format.html { render :status => 502}
       end
     end
   end

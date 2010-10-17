@@ -1,14 +1,19 @@
 class GiftEventsController < ActionController::Base
   respond_to :html, :js
   layout 'application'
+  
   def index
     render :action => 'index'
   end
   
   def show
     @gift_event = GiftEvent.find_by_access_token(params[:id])
-    @contribition = Contribution.new
-    render
+    if @gift_event
+      @contribition = Contribution.new
+      render
+    else
+      render :action => 'not_found'
+    end
   end
   
   def admin_recovery
