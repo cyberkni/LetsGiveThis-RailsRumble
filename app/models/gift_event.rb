@@ -59,11 +59,10 @@ class GiftEvent
   end
   
   def generate_short_link
-    bitly = Mush::Services::Bitly.new
-    bitly.login = "letsgivethis"
-    bitly.apikey = "R_11d45c6bcc9f53f7ab38ace79fd6bc1e"
-    
     if self.gift_short_link.blank?
+      bitly = Mush::Services::Bitly.new
+      bitly.login = "letsgivethis"
+      bitly.apikey = "R_11d45c6bcc9f53f7ab38ace79fd6bc1e"
       # I know there must be a better way than this...
       self.gift_short_link = bitly.shorten "http://letsgivethis.com/event/#{self.access_token}"
     end
