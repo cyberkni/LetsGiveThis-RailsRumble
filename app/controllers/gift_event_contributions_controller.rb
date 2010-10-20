@@ -9,9 +9,9 @@ class GiftEventContributionsController < ApplicationController
     @gift_event.contributions << @contribution
     respond_to do |format|
       if @contribution.valid? and @gift_event.save
+        flash[:notice] = "Thanks #{@contribution.name} for your contribution!"
         @gift_event.reload
         format.html { redirect_to event_url(@gift_event.access_token) }
-        format.js { render :action => :create}
       else
         format.html { respond_with(@gift_event)}
       end

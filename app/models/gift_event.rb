@@ -11,6 +11,7 @@ class GiftEvent
   key :gift_price, Float, :required => true
   key :gift_link, String
   key :gift_file_path, String
+  key :gift_complete_notice_sent, Boolean, :default => false, :required => true
 
   # image crap
   key :image_file_name, String
@@ -73,8 +74,10 @@ class GiftEvent
   end
   
   def check_for_completion_and_notify
-    if self.amount_remaining <= 0
+    if self.amount_remaining <= 0 and not gift_complete_notice_sent
       Notifier.over_the_line(self).deliver
+      self.gift_complete_notice_sent = true
+      self.save
     end
   end
 end

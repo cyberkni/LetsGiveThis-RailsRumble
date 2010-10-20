@@ -10,4 +10,15 @@ module ApplicationHelper
       stylesheet_link_tag style_file
     end
   end
+
+  def show_flash_messages
+    ret_val = ''
+    if flash[:notice]
+      ret_val += "<div class=\"notice\"><p class=\"success\">#{flash[:notice]}</p></div>"
+    end
+    if flash[:error]
+      ret_val += "<div class=\"notice\"><p class=\"success\">#{flash[:error]}</p></div>"
+    end
+    return ret_val
+  end
 end

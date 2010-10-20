@@ -1,0 +1,11 @@
+  <p id='givingstatus'>
+	<% if @gift_event.contributions.blank? %>
+			You're about to make the first contribution!<br />
+			Set the bar impossibly high&hellip;
+	<% else %>
+		The last few contributions made were for
+		<% first = true %>
+		<% @gift_event.contributions.map(&:amount).last(4).each do |contribution| %><%= first ? '': ',' %><% first = false %> <strong>$<%= number_with_precision(contribution, :precision => 2)%></strong><% end %>.<br />
+		Can you do better&hellip;?
+	<% end %>
+  </p>

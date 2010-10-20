@@ -152,6 +152,9 @@ div.box {
   -moz-border-radius: 5px;
   background-color: #eee; }
 
+span.field_with_errors {
+  border-color: #c82717; }
+
 table.grid {
   width: 870px;
   margin-left: 5px;

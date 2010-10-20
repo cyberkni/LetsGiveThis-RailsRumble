@@ -6,3 +6,8 @@ if defined?(PhusionPassenger)
     MongoMapper.connection.connect_to_master if forked
   end
 end
+
+ActionView::Base.field_error_proc =
+lambda do |html_tag, instance|
+  "<span class=\"error\">#{ html_tag }</span>".html_safe
+end

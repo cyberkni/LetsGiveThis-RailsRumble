@@ -26,7 +26,14 @@ class Planner::GiftEventsController < ActionController::Base
         format.html { redirect_to planner_event_url(@gift_event.gift_admin_token) }
         format.js { respond_with(@gift_event) }
       else
-        format.html {redirect_to('/', {:error => '<div class="notice"><p class="error">There was an error with your submission. Please try again.</p></div>'})}
+        format.html do
+          # We are on create page but were rendering the index so we override
+          # the css we include. It might be nice if we used a single CSS file
+          # and used namespaces to separate the different elements in
+          # different sections of the site
+          @action_style = 'gift_events_index'
+          render :template => 'gift_events/index'
+        end
         format.js { render :json => @gift_event.errors }
       end
     end

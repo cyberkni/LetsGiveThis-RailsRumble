@@ -23,6 +23,6 @@ class GiftEventsController < ActionController::Base
       Notifier.resend_admin_link(@gift_events).deliver
       logger.info "mailed to #{@gift_events.first.gift_admin_email}"
     end
-    redirect_to({:action => :index}, {:notice => '<div class="notice"><p class="success">We just dispatched the email explaining how to manage your group gift.</p></div>'})
+    redirect_to('/', {:notice => 'We just dispatched the email explaining how to manage your group gift.'})
   end
 end
