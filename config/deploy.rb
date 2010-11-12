@@ -7,9 +7,9 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 
-role :web, "letsgivethis.com"                          # Your HTTP server, Apache/etc
-role :app, "letsgivethis.com"                          # This may be the same as your `Web` server
-role :db,  "letsgivethis.com", :primary => true # This is where Rails migrations will run
+role :web, "69.172.229.156"                          # Your HTTP server, Apache/etc
+role :app, "69.172.229.156"                          # This may be the same as your `Web` server
+role :db,  "69.172.229.156", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
